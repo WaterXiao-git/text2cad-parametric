@@ -1,0 +1,48 @@
+{
+  "prompt_id": "sample_sma_001",
+  "primary_model": "model.glb",
+  "unit": "mm",
+  "base_model": "self-developed parametric CAD kernel (trimesh + Shapely + manifold3d)",
+  "builder": "generic",
+  "seed": 0,
+  "generation_time_minutes": 0.0535,
+  "postprocess": "boolean cleanup, degenerate face removal, normal unification, vertex merge, bed rebase",
+  "commercial_api_used": false,
+  "offline": true,
+  "category": "small_object",
+  "prompt_intent": "收纳类小器物",
+  "constraints": {
+    "single_component": true,
+    "no_floating_parts": true,
+    "stable_base": true,
+    "watertight_required": true,
+    "size_constrained": true
+  },
+  "bbox_mm": [
+    79.84,
+    55.89,
+    60.0
+  ],
+  "coordinate_frame": "Z-up, bottom at Z=0, XY centered, unit=mm",
+  "faces": 1036,
+  "watertight": true,
+  "renders": {
+    "dir": "renders",
+    "views": [
+      "front.png",
+      "side.png",
+      "top.png",
+      "perspective.png"
+    ],
+    "renderer": "offline software rasterizer (numpy+Pillow, no Blender/OpenGL)"
+  },
+  "size_range_check": {
+    "limit_mm": [
+      2.0,
+      300.0
+    ],
+    "max_extent_mm": 79.84,
+    "adjusted": false,
+    "note": "未调整"
+  }
+}

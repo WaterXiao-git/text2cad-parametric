@@ -1,0 +1,13 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# 运行产物（推理输出目录，按需自建）
+outputs/
+work/
+out/
+
+# 官方题库（未随仓库提供，需自行放置到 data/）
+data/

@@ -1,0 +1,17 @@
+# 文本生成 3D · 参数化建模内核依赖（纯 CPU，无 GPU / CUDA，无模型权重）
+# 实测环境：Python 3.11
+
+numpy==1.26.4
+trimesh==5.1.0        # 网格容器与布尔调度
+manifold3d==3.5.2     # trimesh engine="manifold" 的必需后端，水密性的根基
+shapely==2.1.2        # 二维轮廓运算与镂空阵列
+networkx==3.4.2       # trimesh.split() 连通体判定的运行期依赖
+pillow==12.2.0        # 离线四视图渲染的位图输出
+scipy==1.13.1         # 底面接触凸包计算（printability / validate）
+
+# 说明：
+#  * manifold3d 不能省 —— 缺它时 trimesh 的 engine="manifold" 会直接报错。
+#  * 注意国内镜像源覆盖不全：清华源最高只有 manifold3d 2.5.1，没有 3.x，
+#    用清华源安装会失败；建议改用阿里云源或 pypi.org。
+#  * render_views.py 依赖 Blender 自带的 bpy 模块，只在 Blender 内运行，
+#    pip 装不上；推理链路用的是纯 numpy 实现的 render_offline.py，不依赖它。
